@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!--Shout to ChatGPT for making things easier-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Torrent Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff386;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            padding: 10px;
+        }
+        nav a {
+            color: #fff;
+            margin-right: 10px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .category {
+            margin-bottom: 20px;
+        }
+        .category h2 {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            margin: 0;
+        }
+        .torrent {
+            background-color: #fff;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        /*POP UP*/
+        /* Style for the navigation bar */
+        nav {
+        background-color: #444;
+        padding: 10px;
+        overflow: hidden;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        margin-right: 10px;
+    }
+
+    /* Style for the "Download Status" link */
+    .download-status-link {
+        float: right;
+        color: #fff;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    /* Modal styling */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60%; /* Adjust the width as needed */
+        height: 45%; /* Maintain 4:3 aspect ratio */
+        background-color: rgb(192, 0, 0); /* Red background */
+        border: 5px solid white; /* White border */
+        z-index: 1000;
+        box-sizing: border-box; /* Include border in element's total width and height */
+    }
+
+    .modal-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .close-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        text-decoration: none;
+        color: white;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* Display modal when targeted */
+    #downloadStatusModal:target {
+        display: block;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Funky Files</h1>
+    </header>
+    <nav>
+        <a href="#downloadStatusModal" class="download-status-link">Download Status</a><!--POP UP-->
+        <a href="#movies">Movies</a>
+        <a href="#music">Music</a>
+        <a href="#books">Books</a>
+        <a href="#games">Games</a>
+    </nav>
+    <div id="downloadStatusModal" class="modal"><!--POP UP-->
+        <div class="modal-content">
+            <a href="#" class="close-button">&times;</a>
+            <p>This is a static message because JavaScript is not used.</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="category" id="movies">
+            <h2>Movies</h2>
+            <div class="torrent">
+                <h3>Example Movie 1</h3>
+                <p>Description of the movie. Size: 2.5 GB</p>
+                <a href="example_movie1.torrent">Download Torrent</a> | <a href="magnet:?xt=urn:btih:example1hash">Magnet Link</a>
+            </div>
+            <div class="torrent">
+                <h3>Example Movie 2</h3>
+                <p>Description of the movie. Size: 1.8 GB</p>
+                <a href="example_movie2.torrent">Download Torrent</a> | <a href="magnet:?xt=urn:btih:example2hash">Magnet Link</a>
+            </div>
+        </div>
+
+        <div class="category" id="music">
+            <h2>Music</h2>
+            <div class="torrent">
+                <h3>Example Album 1</h3>
+                <p>Description of the album. Size: 150 MB</p>
+                <a href="example_album1.torrent">Download Torrent</a> | <a href="magnet:?xt=urn:btih:example3hash">Magnet Link</a>
+            </div>
+            <div class="torrent">
+                <h3>Example Album 2</h3>
+                <p>Description of the album. Size: 200 MB</p>
+                <a href="example_album2.torrent">Download Torrent</a> | <a href="magnet:?xt=urn:btih:example4hash">Magnet Link</a>
+            </div>
+        </div>
+
+        <div class="category" id="books">
+            <h2>Books</h2>
+            <div class="torrent">
+                <h3>Example Book 1</h3>
+                <p>Description of the book. Size: 5 MB</p>
+                <a href="example_book1.torrent">Download Torrent</a> | <a href="magnet:?xt=urn:btih:example5hash">Magnet Link</a>
+            </div>
+            <div class="torrent">
+                <h3>Example Book 2</h3>
+                <p>Description of the book. Size: 3 MB</p>
+                <a href="example_book2.torrent">Download Torrent</a> | <a href="magnet:?xt=urn:btih:example6hash">Magnet Link</a>
+            </div>
+        </div>
+
+        <div class="category" id="games">
+            <h2>Games</h2>
+            <div class="torrent">
+                <h3>Example Game 1</h3>
+                <p>Description of the game. Size: 4 GB</p>
+                <a href="example_game1.torrent">Download Torrent</a> | <a href="magnet:?xt=urn:btih:example7hash">Magnet Link</a>
+            </div>
+            <div class="torrent">
+                <h3>Example Game 2</h3>
+                <p>Description of the game. Size: 6 GB</p>
+                <a href="example_game2.torrent">Download Torrent</a> | <a href="magnet:?xt=urn:btih:example8hash">Magnet Link</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
